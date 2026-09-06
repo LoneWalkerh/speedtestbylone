@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedtest Pro — Next-Gen Bandwidth Benchmark & Desktop Speedometer</title>
+  <meta name="description" content="Download Speedtest Pro for Windows. High-precision desktop internet speedtest featuring an Arc-Reactor dial, neon bloom telemetry, official Ookla engine, and persistent history.">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/app_icon.png" alt="Speedtest Pro Logo">
+        <span>Speedtest Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#demo">Live Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#comparison">Why Us?</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="downloads/SpeedTest_Setup.exe" download="SpeedTest_Setup.exe" class="btn btn-primary btn-sm">
+          <span>⬇</span> Download Installer
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="container hero" id="demo">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        v1.0.0 Stable • Windows 10/11 64-Bit • Official Ookla Engine
+      </div>
+      <h1 class="hero-title">
+        The Ultimate Desktop <br>
+        <span class="gradient-text">Speed Benchmark.</span>
+      </h1>
+      <p class="hero-desc">
+        Experience high-precision bandwidth diagnostics wrapped in a futuristic Arc Reactor dial. Powered by the official Ookla CLI engine with unthrottled gigabit throughput, micro-flutter needle physics, dynamic multi-tier scaling, and persistent test history.
+      </p>
+
+      <!-- Working Download Actions -->
+      <div class="hero-actions">
+        <a href="downloads/SpeedTest_Setup.exe" download="SpeedTest_Setup.exe" class="btn btn-primary btn-lg" id="heroDownloadBtn">
+          <span style="font-size: 1.3rem;">🪟</span>
+          <div style="text-align: left; line-height: 1.2;">
+            <div style="font-size: 1.05rem;">Download for Windows</div>
+            <div style="font-size: 0.75rem; opacity: 0.85; font-weight: 500;">Setup Installer • 31.6 MB</div>
+          </div>
+        </a>
+        <a href="downloads/SpeedTestGUI.exe" download="SpeedTestGUI.exe" class="btn btn-secondary btn-lg">
+          <span>⚡</span> Portable EXE (29.9 MB)
+        </a>
+      </div>
+
+      <div class="dl-details">
+        <span>✓ Instant Native Launch</span>
+        <span>✓ Zero Dependencies</span>
+        <span>✓ 100% Free & Ad-Free</span>
+      </div>
+    </div>
+
+    <!-- Live Interactive Simulator Card -->
+    <div class="hero-widget-card">
+      <div class="simulator-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#10B981; box-shadow: 0 0 8px #10B981;"></span>
+          <strong style="font-size: 0.88rem; letter-spacing: 0.04em;">LIVE DIAL SIMULATOR</strong>
+        </div>
+        <button id="toggleSfxBtn" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.78rem;">
+          🔊 Sound: ON
+        </button>
+      </div>
+
+      <!-- Real-Time Metric Telemetry -->
+      <div class="sim-metrics-bar">
+        <div class="metric-box">
+          <span class="metric-title">PING</span>
+          <span class="metric-val" id="simPingVal" style="color: #F8FAFC;">--</span>
+          <span class="metric-unit">ms</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-title" style="color: #00E5FF;">DOWNLOAD</span>
+          <span class="metric-val" id="simDlVal" style="color: #00E5FF;">--</span>
+          <span class="metric-unit">Mbps</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-title" style="color: #C084FC;">UPLOAD</span>
+          <span class="metric-val" id="simUlVal" style="color: #C084FC;">--</span>
+          <span class="metric-unit">Mbps</span>
+        </div>
+      </div>
+
+      <!-- Canvas Speedometer -->
+      <div class="sim-canvas-wrapper">
+        <canvas id="speedometerCanvas" width="380" height="360" title="Click 'GO' to run interactive benchmark simulation"></canvas>
+      </div>
+
+      <!-- Simulator Status Footer -->
+      <div class="sim-footer-row">
+        <div id="simGradeBadge" class="sim-grade-badge">
+          Click "GO" on the dial or button below to test
+        </div>
+        <button id="runDemoBtn" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.82rem;">
+          ▶ Run Demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Feature Grid Section -->
+  <section class="container features-section" id="features">
+    <div class="section-header">
+      <div class="section-tag">ENGINEERED FOR ENTHUSIASTS</div>
+      <h2 class="section-title">Precision Inside. Masterpiece Outside.</h2>
+      <p class="section-desc">
+        Standard web speed tests run in heavy browser sandboxes with inaccurate TCP throttling. Speedtest Pro runs on bare metal with hardware-accelerated animations.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-box">⚡</div>
+        <h3 class="feature-title">Arc-Reactor Laser Dial</h3>
+        <p class="feature-desc">
+          Features dual counter-rotating sci-fi orbital tech rings, warp-speed background particle engine, multi-layer neon bloom, and analog micro-flutter needle physics rendered at 60 FPS.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🚀</div>
+        <h3 class="feature-title">Genuine Ookla Engine</h3>
+        <p class="feature-desc">
+          Integrated with the official high-performance Ookla CLI backend. Features a custom token-bypass mechanism that eliminates HTTP 429 rate-limiting bans on heavy usage.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">📊</div>
+        <h3 class="feature-title">Persistent History & Export</h3>
+        <p class="feature-desc">
+          Every run is recorded with timestamps, ping, jitter, download, upload, server, and ISP info. Filter records, evaluate connection grades (Grade A+ Fiber), or export to CSV.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">📈</div>
+        <h3 class="feature-title">Dynamic Multi-Tier Scaling</h3>
+        <p class="feature-desc">
+          Automatically shifts the speedometer gauge between 500 Mbps, 1,000 Mbps, and 2,000 Mbps scales in real-time to fit ultra-fast fiber connections with custom non-linear tick labels.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🌐</div>
+        <h3 class="feature-title">Global Server Selector</h3>
+        <p class="feature-desc">
+          Intelligently discovers nearby speedtest servers with live round-trip latency pings. Easily switch between regional hosts or test direct peering to specific carriers.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🔒</div>
+        <h3 class="feature-title">100% Native & Private</h3>
+        <p class="feature-desc">
+          No Electron bloat, no invasive tracking cookies, no pop-up video advertisements. Launches in under 0.8 seconds and consumes less than 35 MB of RAM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Comparison Table -->
+  <section class="container comparison-section" id="comparison">
+    <div class="section-header">
+      <div class="section-tag">BENCHMARK COMPARISON</div>
+      <h2 class="section-title">How Speedtest Pro Outperforms the Rest</h2>
+      <p class="section-desc">See how a native desktop benchmark compares to traditional in-browser speedtests and heavy Electron web wrappers.</p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Diagnostic Metric</th>
+            <th class="highlight-col">Speedtest Pro (Desktop)</th>
+            <th>Web Browser Tests</th>
+            <th>Electron Desktop Wrappers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Memory Usage (RAM)</strong></td>
+            <td class="highlight-col"><strong>~32 MB</strong></td>
+            <td>350 – 800 MB (Full Tab)</td>
+            <td>280 – 600 MB</td>
+          </tr>
+          <tr>
+            <td><strong>Engine Backend</strong></td>
+            <td class="highlight-col"><strong>Official Ookla CLI Native</strong></td>
+            <td>JavaScript / WebSockets</td>
+            <td>Chromium IPC Bridge</td>
+          </tr>
+          <tr>
+            <td><strong>Rate-Limit Throttling</strong></td>
+            <td class="highlight-col"><strong>Protected (Token Bypass)</strong></td>
+            <td>Subject to Cloudflare Captchas</td>
+            <td>Subject to API Rate Limits</td>
+          </tr>
+          <tr>
+            <td><strong>Gigabit+ Fiber Precision</strong></td>
+            <td class="highlight-col"><strong>Unthrottled multi-stream socket</strong></td>
+            <td>Browser bufferbloat skew</td>
+            <td>V8 JS Garbage Collection jitter</td>
+          </tr>
+          <tr>
+            <td><strong>Display Visuals</strong></td>
+            <td class="highlight-col"><strong>60 FPS Arc Reactor & Sparkline</strong></td>
+            <td>Static HTML5 Gauge</td>
+            <td>Heavy CSS animations</td>
+          </tr>
+          <tr>
+            <td><strong>Ads & Data Trackers</strong></td>
+            <td class="highlight-col"><strong>0 (Clean & Private)</strong></td>
+            <td>Over 15+ third-party ad networks</td>
+            <td>Embedded telemetry trackers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Download Center Section -->
+  <section class="container download-section" id="download">
+    <div class="download-banner">
+      <div style="font-size: 3rem; margin-bottom: 12px;">⚡</div>
+      <h2>Get Speedtest Pro for Windows</h2>
+      <p>
+        Ready to experience true unthrottled gigabit speed testing? Download the official Windows Setup installer or portable standalone executable now.
+      </p>
+
+      <div class="download-buttons-group">
+        <!-- Direct Working Installer Download -->
+        <a href="downloads/SpeedTest_Setup.exe" download="SpeedTest_Setup.exe" class="dl-card-btn primary">
+          <div class="dl-btn-icon">🪟</div>
+          <div class="dl-btn-text">
+            <h4>Download Windows Installer</h4>
+            <p>SpeedTest_Setup.exe • 31.6 MB • Recommended</p>
+          </div>
+        </a>
+
+        <!-- Direct Working Portable Download -->
+        <a href="downloads/SpeedTestGUI.exe" download="SpeedTestGUI.exe" class="dl-card-btn secondary">
+          <div class="dl-btn-icon">📦</div>
+          <div class="dl-btn-text">
+            <h4>Download Portable Binary</h4>
+            <p>SpeedTestGUI.exe • 29.9 MB • No installation</p>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top: 32px; font-size: 0.85rem; color: #64748B;">
+        Compatible with Windows 10 and Windows 11 (64-bit). Digitally self-contained with embedded Ookla engine.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="container faq-section" id="faq">
+    <div class="section-header">
+      <div class="section-tag">FREQUENTLY ASKED QUESTIONS</div>
+      <h2 class="section-title">Everything You Need to Know</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          How do the download buttons work?
+          <span>+</span>
+        </div>
+        <div class="faq-answer" style="display: none;">
+          Both download buttons provide direct binary file downloads. The <strong>Windows Installer (.exe)</strong> installs Speedtest Pro into your Windows Start Menu and Desktop with clean uninstallation support. The <strong>Portable Version (.exe)</strong> runs instantly upon double-clicking with zero installation needed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How does Speedtest Pro bypass Ookla rate limits?
+          <span>+</span>
+        </div>
+        <div class="faq-answer" style="display: none;">
+          Official Ookla speedtest clients track device identifiers that frequently trigger HTTP 429 "Limit reached" bans when running repeated benchmarks. Speedtest Pro embeds a binary-patched engine token that safely isolates each session, guaranteeing uninterrupted high-speed testing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Does it support multi-gigabit connections (1 Gbps+ / 2 Gbps+)?
+          <span>+</span>
+        </div>
+        <div class="faq-answer" style="display: none;">
+          Yes! The application features dynamic scale switching. If your line speed surpasses 500 Mbps, the gauge automatically re-indexes to a 1,000 Mbps scale. If speeds exceed 1,000 Mbps, it seamlessly expands to a 2,000 Mbps scale with full real-time needle and sparkline tracking.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Where is my test history stored?
+          <span>+</span>
+        </div>
+        <div class="faq-answer" style="display: none;">
+          All benchmarks are securely stored in your local user application directory (`~/.speedtest_history.json`). No benchmarks are sent to external servers or third parties, and you can export your entire test history to CSV with one click.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/app_icon.png" alt="Logo" style="width: 24px; height: 24px; border-radius: 4px;">
+        <span><strong>Speedtest Pro</strong> &copy; 2026. All rights reserved.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="downloads/SpeedTest_Setup.exe" download="SpeedTest_Setup.exe">Download Installer</a></li>
+        <li><a href="downloads/SpeedTestGUI.exe" download="SpeedTestGUI.exe">Portable EXE</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Live Demo</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
